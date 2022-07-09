@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1y5y972" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.0.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <bpmn:process id="AskTDog" name="Ask TDog" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Need T-Dogs help">
+      <bpmn:outgoing>Flow_0ucm1yi</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1xwl9zo" messageRef="Message_2hbtn2p" />
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0ucm1yi" sourceRef="StartEvent_1" targetRef="Activity_1703lwd" />
+    <bpmn:endEvent id="Event_08015zo">
+      <bpmn:incoming>Flow_0tvd66m</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0tvd66m" sourceRef="Activity_1703lwd" targetRef="Event_08015zo" />
+    <bpmn:userTask id="Activity_1703lwd" name="T-Dogs Answers the question">
+      <bpmn:incoming>Flow_0ucm1yi</bpmn:incoming>
+      <bpmn:outgoing>Flow_0tvd66m</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:message id="Message_2hbtn2p" name="AskTDog" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="AskTDog">
+      <bpmndi:BPMNEdge id="Flow_0ucm1yi_di" bpmnElement="Flow_0ucm1yi">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0tvd66m_di" bpmnElement="Flow_0tvd66m">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="432" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_07x6ubs_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="153" y="142" width="89" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_08015zo_di" bpmnElement="Event_08015zo">
+        <dc:Bounds x="432" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01trev3_di" bpmnElement="Activity_1703lwd">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
